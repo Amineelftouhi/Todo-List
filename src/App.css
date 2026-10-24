@@ -1,0 +1,59 @@
+@keyframes gridMove {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 40px 40px;
+    }
+}
+
+@keyframes glowMove {
+    0%,
+    100% {
+        transform: translate(-10%, -5%);
+        opacity: 0.35;
+    }
+
+    50% {
+        transform: translate(10%, 5%);
+        opacity: 0.55;
+    }
+}
+
+@keyframes glowMoveReverse {
+    0%,
+    100% {
+        transform: translate(10%, 5%);
+        opacity: 0.25;
+    }
+
+    50% {
+        transform: translate(-10%, -5%);
+        opacity: 0.45;
+    }
+}
+
+.animated-grid {
+    background-image:
+        linear-gradient(
+            rgba(148, 163, 184, 0.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(148, 163, 184, 0.08) 1px,
+            transparent 1px
+        );
+
+    background-size: 40px 40px;
+    animation: gridMove 12s linear infinite;
+}
+
+.glow-one {
+    animation: glowMove 10s ease-in-out infinite;
+}
+
+.glow-two {
+    animation: glowMoveReverse 14s ease-in-out infinite;
+}
